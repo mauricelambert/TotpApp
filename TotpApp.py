@@ -27,7 +27,7 @@ secret as password in a password manager), you don't need any phone or
 other device
 """
 
-__version__ = "0.0.1"
+__version__ = "0.0.3"
 __author__ = "Maurice Lambert"
 __author_email__ = "mauricelambert434@gmail.com"
 __maintainer__ = "Maurice Lambert"
@@ -54,12 +54,14 @@ license = __license__
 print(copyright)
 
 from tkinter.ttk import Style, Label, Entry, Progressbar, Button
+from os.path import dirname, join
 from struct import pack, unpack
 from tkinter import Frame, Tk
 from threading import Thread
 from time import time, sleep
 from base64 import b32decode
 from hmac import new
+from sys import exit
 
 
 class TotpApp:
@@ -72,8 +74,9 @@ class TotpApp:
         self.algorithm = algorithm
 
         master.title("TOTP")
-        master.geometry("400x150")
+        master.geometry("450x150")
         master.configure(bg="#2E2E2E")
+        master.iconbitmap(join(dirname(__file__), "TotpApp.ico"))
 
         self.style = Style()
         self.style.theme_use("clam")
@@ -84,7 +87,7 @@ class TotpApp:
             "TEntry", fieldbackground="#3E3E3E", foreground="white"
         )
         self.style.configure(
-            "TProgressbar", background="#007ACC", troughcolor="#3E3E3E"
+            "TProgressbar", background="#dd8a12", troughcolor="#3E3E3E",
         )
         self.style.configure(
             "TButton", background="#3E3E3E", foreground="white"
@@ -158,7 +161,10 @@ class TotpApp:
         )
 
 
-if __name__ == "__main__":
+def main():
     root = Tk()
     app = TotpApp(root)
     root.mainloop()
+
+if __name__ == "__main__":
+    exit(main())

@@ -1,3 +1,5 @@
+![TotpApp Logo](https://mauricelambert.github.io/info/python/security/TotpApp_small.png "TotpApp logo")
+
 # TotpApp
 
 ## Description
@@ -34,6 +36,7 @@ python3 -m pip install .
 wget https://github.com/mauricelambert/TotpApp/archive/refs/heads/main.zip
 unzip main.zip
 cd TotpApp-main
+python3 -m pip install .
 ```
 
 ## Usages
