@@ -27,7 +27,7 @@ secret as password in a password manager), you don't need any phone or
 other device
 """
 
-__version__ = "0.0.5"
+__version__ = "0.0.6"
 __author__ = "Maurice Lambert"
 __author_email__ = "mauricelambert434@gmail.com"
 __maintainer__ = "Maurice Lambert"
@@ -55,11 +55,12 @@ print(copyright)
 
 from tkinter.ttk import Style, Label, Entry, Progressbar, Button
 from os.path import dirname, join, exists
+from tempfile import TemporaryDirectory
+from base64 import b32decode, b85decode
 from struct import pack, unpack
 from tkinter import Frame, Tk
 from threading import Thread
 from time import time, sleep
-from base64 import b32decode
 from hmac import new
 from sys import exit
 
@@ -170,11 +171,11 @@ def get_ico_file():
 
     try:
         with open(filename, "wb") as file:
-            file.write(data)
+            file.write(b85decode(data))
     except PermissionError:
         filename = join(TemporaryDirectory(), "TotpApp.ico")
         with open(filename, "wb") as file:
-            file.write(data)
+            file.write(b85decode(data))
 
     return filename
 
