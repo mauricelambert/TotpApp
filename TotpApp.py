@@ -27,7 +27,7 @@ secret as password in a password manager), you don't need any phone or
 other device
 """
 
-__version__ = "0.0.4"
+__version__ = "0.0.5"
 __author__ = "Maurice Lambert"
 __author_email__ = "mauricelambert434@gmail.com"
 __maintainer__ = "Maurice Lambert"
