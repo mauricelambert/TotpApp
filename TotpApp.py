@@ -27,7 +27,7 @@ secret as password in a password manager), you don't need any phone or
 other device
 """
 
-__version__ = "0.0.6"
+__version__ = "0.0.7"
 __author__ = "Maurice Lambert"
 __author_email__ = "mauricelambert434@gmail.com"
 __maintainer__ = "Maurice Lambert"
@@ -77,7 +77,7 @@ class TotpApp:
         master.title("TOTP")
         master.geometry("450x150")
         master.configure(bg="#2E2E2E")
-        master.iconbitmap()
+        master.iconbitmap(get_ico_file())
 
         self.style = Style()
         self.style.theme_use("clam")
