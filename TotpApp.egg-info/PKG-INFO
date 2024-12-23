@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: TotpApp
-Version: 0.0.7
+Version: 0.0.8
 Summary: This little app generates your TOTP from your secret (you can use secret as password in a password manager), you don't need any phone or other device
 Home-page: https://github.com/mauricelambert/TotpApp
 Download-URL: https://mauricelambert.github.io/info/python/security/TotpApp.pyz

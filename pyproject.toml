@@ -4,7 +4,7 @@
 
 [project]
 name = "TotpApp"
-version = "0.0.7"
+version = "0.0.8"
 dependencies = []
 authors = [
     {name = "Maurice Lambert", email = "mauricelambert434@gmail.com"},

@@ -27,7 +27,7 @@ secret as password in a password manager), you don't need any phone or
 other device
 """
 
-__version__ = "0.0.7"
+__version__ = "0.0.8"
 __author__ = "Maurice Lambert"
 __author_email__ = "mauricelambert434@gmail.com"
 __maintainer__ = "Maurice Lambert"
@@ -75,9 +75,10 @@ class TotpApp:
         self.algorithm = algorithm
 
         master.title("TOTP")
-        master.geometry("450x150")
+        master.geometry("450x110")
         master.configure(bg="#2E2E2E")
         master.iconbitmap(get_ico_file())
+        master.wm_attributes("-topmost", True)
 
         self.style = Style()
         self.style.theme_use("clam")
@@ -102,14 +103,14 @@ class TotpApp:
         self.secret_frame = Frame(master, bg="#2E2E2E")
         self.secret_frame.pack(pady=10, fill="x", padx=20)
 
-        self.secret_label = Label(self.secret_frame, text="Enter secret:")
+        self.secret_label = Label(self.secret_frame, text="Enter secret:", font=("Arial", 12))
         self.secret_label.pack(side="left", padx=(0, 10))
 
         self.secret_entry = Entry(self.secret_frame, show="*")
         self.secret_entry.pack(side="left")
         self.secret_entry.bind("<KeyRelease>", self.totp)
 
-        self.secret_display = Label(self.secret_frame, text="")
+        self.secret_display = Label(self.secret_frame, text="", font=("Arial", 16))
         self.secret_display.pack(side="left", padx=(10, 0))
 
         self.clipboard_button = Button(
